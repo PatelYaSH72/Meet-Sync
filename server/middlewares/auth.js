@@ -5,6 +5,8 @@ export const protect = async (req, res, next) => {
   const auth = getAuth(req);
   const userId = auth?.userId || req.auth?.userId;
 
+  console.log(auth)
+
   if (!userId) {
     return res
       .status(401)
