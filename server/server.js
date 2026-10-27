@@ -35,6 +35,13 @@ app.use(clerkMiddleware());
 app.get("/", (req, res) => res.send("API is Live!"));
 app.use("/api/meetings", meetingRouter);
 
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Backend is running',
+  })
+})
+
 const io = new Server(server, {
   cors: { origin: allowedOrigins, credentials: true },
 });
