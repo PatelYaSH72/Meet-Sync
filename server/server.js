@@ -32,7 +32,7 @@ app.use(
 app.use(express.json());
 app.use(clerkMiddleware());
 
-app.get("/", (req, res) => res.send("API is Live!"));
+app.get("/", (req, res) => res.send("API is Liv!"));
 app.use("/api/meetings", meetingRouter);
 
 app.get('/health', (req, res) => {
